@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Blog — Rodrigo Gossi</title>
+  <meta name="description" content="Artigos sobre tecnologia, desenvolvimento de software soberano, privacidade e reflexões pessoais.">
+  <meta name="author" content="Rodrigo Gossi">
+
+  <link rel="alternate" type="application/rss+xml" title="Feed RSS de Rodrigo Gossi" href="../feed.xml">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Evitar FOUC (Flash of Unstyled Content) do Tema Escuro -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="site-header">
+      <div class="header-content-centered">
+        <h1 class="site-title">
+          <a href="index.html" id="logo">Rodrigo Gossi</a>
+        </h1>
+      </div>
+
+      <div class="header-content-centered">
+        <nav class="nav">
+          <ul class="nav-utility">
+            <li><span class="current-lang">PT</span> | <a href="../en/blog.html">EN</a></li>
+            <li><a href="photos.html" aria-label="Fotos"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></a></li>
+            <li><a href="search.html" aria-label="Pesquisar"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></a></li>
+            <li><button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">carregando...</button></li>
+          </ul>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Sobre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="e-books.html">E-books</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+        <hr style="border-top: 1px solid var(--accent2); opacity: 0.3; margin-top: 0.5em; margin-bottom: 0.1em;">
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="posts-list" id="blog-section">
+        <h2 class="p-name" style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold; color: var(--text);">Blog</h2>
+        <div class="blog-archive-list">
+      <div class="year-group" style="margin-bottom: 2.5rem;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; color: var(--text);">
+            2026
+        </h3>
+        <ul style="list-style: none; padding-left: 0; margin-top: 0;">
+          <li style="margin-bottom: 0.5rem; line-height: 1.4; display: flex; align-items: flex-start;">
+              <span style="font-weight: 600; color: var(--text); flex: 0 0 110px; display: inline-block; white-space: nowrap;">
+                  Abr 12
+              </span>
+              <div style="flex: 1;">
+                  <a href="posts/conhecimento-a-arte-de-reconstruir-pontes.html" style="text-decoration: underline; font-weight: 400; transition: opacity 0.2s;">Conhecimento, a arte de reconstruir pontes.</a>
+              </div>
+          </li>
+          <li style="margin-bottom: 0.5rem; line-height: 1.4; display: flex; align-items: flex-start;">
+              <span style="font-weight: 600; color: var(--text); flex: 0 0 110px; display: inline-block; white-space: nowrap;">
+                  Fev 11
+              </span>
+              <div style="flex: 1;">
+                  <a href="posts/vida-amor-e-solidao-osho.html" style="text-decoration: underline; font-weight: 400; transition: opacity 0.2s;">Vida, Amor e Solidão - Osho</a>
+              </div>
+          </li>
+        </ul>
+      </div>
+      <div class="year-group" style="margin-bottom: 2.5rem;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; color: var(--text);">
+            2025
+        </h3>
+        <ul style="list-style: none; padding-left: 0; margin-top: 0;">
+          <li style="margin-bottom: 0.5rem; line-height: 1.4; display: flex; align-items: flex-start;">
+              <span style="font-weight: 600; color: var(--text); flex: 0 0 110px; display: inline-block; white-space: nowrap;">
+                  Ago 20
+              </span>
+              <div style="flex: 1;">
+                  <a href="posts/metamorfose-uma-reflexao-sobre-a-utilidade-da-vida.html" style="text-decoration: underline; font-weight: 400; transition: opacity 0.2s;">Metamorfose: uma reflexão sobre a utilidade da vida</a>
+              </div>
+          </li>
+        </ul>
+      </div>
+      <div class="year-group" style="margin-bottom: 2.5rem;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; color: var(--text);">
+            2024
+        </h3>
+        <ul style="list-style: none; padding-left: 0; margin-top: 0;">
+          <li style="margin-bottom: 0.5rem; line-height: 1.4; display: flex; align-items: flex-start;">
+              <span style="font-weight: 600; color: var(--text); flex: 0 0 110px; display: inline-block; white-space: nowrap;">
+                  Jan 22
+              </span>
+              <div style="flex: 1;">
+                  <a href="posts/o-que-e-mindfullness-e-como-pode-te-ajudar-a-ter-uma-vida-mais-tranquila-e-com-mais-proposito.html" style="text-decoration: underline; font-weight: 400; transition: opacity 0.2s;">O que é mindfullness e como pode te ajudar a ter uma vida mais tranquila e com mais propósito</a>
+              </div>
+          </li>
+          <li style="margin-bottom: 0.5rem; line-height: 1.4; display: flex; align-items: flex-start;">
+              <span style="font-weight: 600; color: var(--text); flex: 0 0 110px; display: inline-block; white-space: nowrap;">
+                  Jan 19
+              </span>
+              <div style="flex: 1;">
+                  <a href="posts/como-ter-2-bancadas-de-trabalho-aumentou-minha-criatividade.html" style="text-decoration: underline; font-weight: 400; transition: opacity 0.2s;">Como ter 2 bancadas de trabalho aumentou minha criatividade</a>
+              </div>
+          </li>
+        </ul>
+      </div>
+      <div class="year-group" style="margin-bottom: 2.5rem;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; color: var(--text);">
+            2022
+        </h3>
+        <ul style="list-style: none; padding-left: 0; margin-top: 0;">
+          <li style="margin-bottom: 0.5rem; line-height: 1.4; display: flex; align-items: flex-start;">
+              <span style="font-weight: 600; color: var(--text); flex: 0 0 110px; display: inline-block; white-space: nowrap;">
+                  Nov 22
+              </span>
+              <div style="flex: 1;">
+                  <a href="posts/redacao-ods.html" style="text-decoration: underline; font-weight: 400; transition: opacity 0.2s;">Redação ODS</a>
+              </div>
+          </li>
+          <li style="margin-bottom: 0.5rem; line-height: 1.4; display: flex; align-items: flex-start;">
+              <span style="font-weight: 600; color: var(--text); flex: 0 0 110px; display: inline-block; white-space: nowrap;">
+                  Set 08
+              </span>
+              <div style="flex: 1;">
+                  <a href="posts/nextcloud-e-ubuntu-server-como-criei-meu-servidor-em-casa-com-um-notebook-velho.html" style="text-decoration: underline; font-weight: 400; transition: opacity 0.2s;">NextCloud e Ubuntu Server: Como criei meu servidor em casa com um notebook velho!</a>
+              </div>
+          </li>
+          <li style="margin-bottom: 0.5rem; line-height: 1.4; display: flex; align-items: flex-start;">
+              <span style="font-weight: 600; color: var(--text); flex: 0 0 110px; display: inline-block; white-space: nowrap;">
+                  Jun 07
+              </span>
+              <div style="flex: 1;">
+                  <a href="posts/as-musicas-do-minecraft-sao-tao.html" style="text-decoration: underline; font-weight: 400; transition: opacity 0.2s;">As músicas do Minecraft são tão…</a>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer" id="footer-section">
+      <div class="footer-container">
+        <nav class="footer-nav">
+          <a href="about.html">Sobre</a>
+          <a href="../feed.xml">RSS</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+        <div class="footer-credit-group">
+          <p class="footer-credit">Feito à mão, por um humano.</p>
+          <p class="footer-credit">São Paulo, Brasil.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

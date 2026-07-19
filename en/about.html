@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>About Me — Rodrigo Gossi</title>
+  <meta name="description" content="Learn more about Rodrigo Gossi, his path, projects, and why this site was built following data sovereignty ideals.">
+  <meta name="author" content="Rodrigo Gossi">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Evitar FOUC (Flash of Unstyled Content) do Tema Escuro -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="site-header">
+      <div class="header-content-centered">
+        <h1 class="site-title">
+          <a href="index.html" id="logo">Rodrigo Gossi</a>
+        </h1>
+      </div>
+
+      <div class="header-content-centered">
+        <nav class="nav">
+          <ul class="nav-utility">
+            <li><a href="../pt/about.html">PT</a> | <span class="current-lang">EN</span></li>
+            <li><a href="photos.html" aria-label="Photos"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></a></li>
+            <li><a href="search.html" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></a></li>
+            <li><button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">loading...</button></li>
+          </ul>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="e-books.html">E-books</a></li>
+            <li><a href="cursos.html">Courses</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+        <hr style="border-top: 1px solid var(--accent2); opacity: 0.3; margin-top: 0.5em; margin-bottom: 0.1em;">
+      </div>
+    </header>
+
+    <main class="page" id="about-content">
+      <h2 class="p-name" style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold; color: var(--text);">About me</h2>
+      <p>
+        Hello, my name is <strong>Rodrigo Gossi</strong>. I work in the technology ecosystem, building digital products, stable APIs, and fast interfaces.
+      </p>
+
+      <h2>Why does this site exist?</h2>
+      <p>
+        The modern web has become extremely heavy, cluttered with cookie consent pop-ups, advertising trackers, and JS frameworks with tens of megabytes just to display simple paragraphs of text.
+      </p>
+      <p>
+        This site follows a different philosophy:
+      </p>
+      <ul>
+        <li><strong>Independence:</strong> The files belong to me. They do not depend on any centralized blogging platform. I can zip them up and publish them to any server in minutes.</li>
+        <li><strong>Lightweight:</strong> Ultra-fast load times, built entirely with basic HTML and CSS, with subtle touches of JavaScript.</li>
+        <li><strong>Readability:</strong> Focus on proper contrast, comfortable typography, and a total absence of distractions.</li>
+      </ul>
+
+      <h2>My Work & Contact</h2>
+      <p>
+        If you want to talk about static web development, software engineering, automation, or any other topics, feel free to send me an email or open a pull request on my GitHub.
+      </p>
+      <p>
+        You can also follow my updates by subscribing to my <a href="../feed.xml">RSS feed</a>.
+      </p>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer" id="footer-section">
+      <div class="footer-container">
+        <nav class="footer-nav">
+          <a href="about.html">About</a>
+          <a href="../feed.xml">RSS</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+        <div class="footer-credit-group">
+          <p class="footer-credit">Handcrafted by a human.</p>
+          <p class="footer-credit">São Paulo, Brazil.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

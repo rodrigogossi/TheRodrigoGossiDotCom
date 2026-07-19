@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Pesquisa — Rodrigo Gossi</title>
+  <meta name="description" content="Pesquise por artigos, tutoriais e reflexões escritas por Rodrigo Gossi.">
+  <meta name="author" content="Rodrigo Gossi">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Evitar FOUC (Flash of Unstyled Content) do Tema Escuro -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="site-header">
+      <div class="header-content-centered">
+        <h1 class="site-title">
+          <a href="index.html" id="logo">Rodrigo Gossi</a>
+        </h1>
+      </div>
+
+      <div class="header-content-centered">
+        <nav class="nav">
+          <ul class="nav-utility">
+            <li><span class="current-lang">PT</span> | <a href="../en/search.html">EN</a></li>
+            <li><a href="photos.html" aria-label="Fotos"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></a></li>
+            <li><a href="search.html" aria-label="Pesquisar"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></a></li>
+            <li><button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">carregando...</button></li>
+          </ul>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Sobre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="e-books.html">E-books</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+        <hr style="border-top: 1px solid var(--accent2); opacity: 0.3; margin-top: 0.5em; margin-bottom: 0.1em;">
+      </div>
+    </header>
+
+    <main class="page">
+      <h2 class="p-name" style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold; color: var(--text);">Pesquisa</h2>
+      
+      <input type="text" id="search-input" placeholder="Pesquisar artigos..." style="width: 100%; padding: 0.7em 1em; border-radius: 6px; border: 1px solid var(--accent2); background: var(--background); color: var(--text); font-size: 1rem; margin-bottom: 2em; outline: none; transition: border-color 0.2s;" autofocus>
+
+      <div id="search-results">
+        <p style="color: var(--accent2);">Digite termos para iniciar a busca.</p>
+      </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer" id="footer-section">
+      <div class="footer-container">
+        <nav class="footer-nav">
+          <a href="about.html">Sobre</a>
+          <a href="../feed.xml">RSS</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+        <div class="footer-credit-group">
+          <p class="footer-credit">Feito à mão, por um humano.</p>
+          <p class="footer-credit">São Paulo, Brasil.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Lógica de Pesquisa Local -->
+  <script>
+    const posts = [
+      {
+        title: "Conhecimento, a arte de reconstruir pontes.",
+        url: "posts/conhecimento-a-arte-de-reconstruir-pontes.html",
+        date: "12 Apr 2026",
+        excerpt: "Para mim a única coisa que deveríamos – fundamentalmente – aprender na nossa jornada pela vida é não sermos vítimas da própria existência. Jesus falava em sermos herdeiros do reino dos céus..."
+      },
+      {
+        title: "Vida, Amor e Solidão - Osho",
+        url: "posts/vida-amor-e-solidao-osho.html",
+        date: "11 Feb 2026",
+        excerpt: "Neste livro, o autor - Osho - um grande filósofo indiano discorre sobre sua visão sobre o amor, seu significado e como se aplica na vida cotidiana. A peça central de sua abordagem, em todo seu ensinamento..."
+      },
+      {
+        title: "Metamorfose: uma reflexão sobre a utilidade da vida",
+        url: "posts/metamorfose-uma-reflexao-sobre-a-utilidade-da-vida.html",
+        date: "20 Ago 2025",
+        excerpt: "Recentemente, li o livro A Metamorfose, de Franz Kafka (publicado em 1915), no qual acompanhamos a história de Gregor Samsa, um jovem no início da vida adulta. Ele trabalha como caixeiro-viajante..."
+      },
+      {
+        title: "O que é mindfullness e como pode te ajudar a ter uma vida mais tranquila e com mais propósito",
+        url: "posts/o-que-e-mindfullness-e-como-pode-te-ajudar-a-ter-uma-vida-mais-tranquila-e-com-mais-proposito.html",
+        date: "22 Jan 2024",
+        excerpt: "Vivemos em uma sociedade agitada, focada majoritariamente em resultados e em buscar aceitação coletiva, buscamos incansavelmente aumentar nossa produtividade para produzir e consumir mais..."
+      },
+      {
+        title: "Como ter 2 bancadas de trabalho aumentou minha criatividade",
+        url: "posts/como-ter-2-bancadas-de-trabalho-aumentou-minha-criatividade.html",
+        date: "19 Jan 2024",
+        excerpt: "\"Em nossa era digital, não esqueça de usar suas digitais\" - Lynda Barry Vivemos em uma mudança de década, conforme apontado por Domenico de Masi em \"O ócio criativo\" (2001), esta mudança..."
+      },
+      {
+        title: "Redação ODS",
+        url: "posts/redacao-ods.html",
+        date: "22 Nov 2022",
+        excerpt: "A igualdade de oportunidades é um princípio segundo o qual todas as pessoas devem ser tratadas de forma igual em suas diferenças e devem ter acesso a uma educação de qualidade..."
+      },
+      {
+        title: "NextCloud e Ubuntu Server: Como criei meu servidor em casa com um notebook velho!",
+        url: "posts/nextcloud-e-ubuntu-server-como-criei-meu-servidor-em-casa-com-um-notebook-velho.html",
+        date: "08 Set 2022",
+        excerpt: "Os anos se passam, e com eles, aprimoramos as tecnologias que fazem parte do nosso cotidiano. Provavelmente, em algum momento, você precisou de um novo computador ou notebook..."
+      },
+      {
+        title: "As músicas do Minecraft são tão…",
+        url: "posts/as-musicas-do-minecraft-sao-tao.html",
+        date: "07 Jun 2022",
+        excerpt: "Estes dias, enquanto explorava o Spotify, deparei-me quase por acaso com uma playlist de trilhas sonoras do Minecraft. Não sei bem por quê, mas achei tão inesperado que decidi dar o play..."
+      }
+    ];
+
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      
+      if (query.length === 0) {
+        searchResults.innerHTML = '<p style="color: var(--accent2);">Digite termos para iniciar a busca.</p>';
+        return;
+      }
+
+      const filtered = posts.filter(post => 
+        post.title.toLowerCase().includes(query) || 
+        post.excerpt.toLowerCase().includes(query)
+      );
+
+      if (filtered.length === 0) {
+        searchResults.innerHTML = '<p style="color: var(--accent2);">Nenhum artigo encontrado para esta busca.</p>';
+        return;
+      }
+
+      let html = '';
+      filtered.forEach(post => {
+        html += `
+          <div class="post-item" style="margin-bottom: 1.8em;">
+            <a href="${post.url}" class="post-link" style="font-size: 1.15rem; font-weight: bold; text-decoration: underline; color: var(--text);">${post.title}</a>
+            <span class="post-date" style="font-size: 0.8em; color: var(--accent2); margin-left: 0.75rem;">${post.date}</span>
+            <p style="font-size: 0.95rem; line-height: 1.5; margin-top: 0.4em; color: var(--accent2);">${post.excerpt}</p>
+          </div>
+        `;
+      });
+      searchResults.innerHTML = html;
+    });
+  </script>
+
+  <!-- Scripts -->
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

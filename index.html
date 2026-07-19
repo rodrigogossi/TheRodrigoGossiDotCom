@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rodrigo Gossi</title>
+  <style>
+    /* Styling a clean, dark Apple-style background during loading/redirect */
+    html, body {
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <script>
+    (function() {
+      const preferredLang = localStorage.getItem('preferred-language');
+      if (preferredLang) {
+        window.location.replace(preferredLang === 'en' ? 'en/index.html' : 'pt/index.html');
+      } else {
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang && browserLang.startsWith('en')) {
+          window.location.replace('en/index.html');
+        } else {
+          window.location.replace('pt/index.html');
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+</body>
+</html>

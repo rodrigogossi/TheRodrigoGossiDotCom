@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Cursos — Rodrigo Gossi</title>
+  <meta name="description" content="Conheça meus cursos de criação audiovisual e inteligência artificial generativa, disponíveis para acesso gratuito.">
+  <meta name="author" content="Rodrigo Gossi">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Evitar FOUC (Flash of Unstyled Content) do Tema Escuro -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="site-header">
+      <div class="header-content-centered">
+        <h1 class="site-title">
+          <a href="index.html" id="logo">Rodrigo Gossi</a>
+        </h1>
+      </div>
+
+      <div class="header-content-centered">
+        <nav class="nav">
+          <ul class="nav-utility">
+            <li><span class="current-lang">PT</span> | <a href="../en/cursos.html">EN</a></li>
+            <li><a href="photos.html" aria-label="Fotos"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></a></li>
+            <li><a href="search.html" aria-label="Pesquisar"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></a></li>
+            <li><button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">carregando...</button></li>
+          </ul>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Sobre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="e-books.html">E-books</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+        <hr style="border-top: 1px solid var(--accent2); opacity: 0.3; margin-top: 0.5em; margin-bottom: 0.1em;">
+      </div>
+    </header>
+
+    <main class="page" id="cursos-page">
+      <h2 class="p-name" style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold; color: var(--text);">Cursos</h2>
+      <p>Cursos produzidos por mim:</p>
+
+      <!-- Curso 1 -->
+      <article class="project-item" style="margin-top: 2.5em; border-bottom: 1px solid var(--border-color); padding-bottom: 2em; margin-bottom: 2em;">
+        <img src="https://rodrigogossi.com/wp-content/uploads/2025/08/curso_producao_de_conteudo-300x169.png" alt="Capa do curso Criação Audiovisual na Prática" style="border-radius: 5px; width: 100%; max-width: 320px; height: auto; margin-bottom: 1em;">
+        
+        <h2>Criação audiovisual na prática: crie seu primeiro treinamento</h2>
+        <p>
+          Durante este treinamento vamos explorar diversos aspectos presentes no mundo do audiovisual, a fim de conhecer todas as etapas necessárias para produzir nosso próprio treinamento!
+        </p>
+        <p>Vamos passar por etapas como:</p>
+        <ul>
+          <li>Escrita criativa;</li>
+          <li>Roteirização e Estruturação;</li>
+          <li>Edição de áudio;</li>
+          <li>Correção de cor;</li>
+          <li>Princípios de edição de vídeo;</li>
+        </ul>
+        <p>Preparado para iniciar sua jornada nesse incrível mundo do audiovisual?</p>
+        <a href="https://www.youtube.com/playlist?list=PLT2AlOaDXYxvO5FCJ_ewJzn4VGXVHgnDe" target="_blank" rel="noopener" style="font-weight: bold;">Assistir no YouTube &rarr;</a>
+      </article>
+
+      <!-- Curso 2 -->
+      <article class="project-item">
+        <img src="https://rodrigogossi.com/wp-content/uploads/2025/08/curso_ia_generativas-300x169.png" alt="Capa do curso Introdução a IAs Generativas" style="border-radius: 5px; width: 100%; max-width: 320px; height: auto; margin-bottom: 1em;">
+        
+        <h2>Introdução a IA's generativas</h2>
+        <p>
+          Durante esse curso vamos aprender a utilizar as mais populares ferramentas de IA existentes hoje, vamos aprender usá-las para criar e formatar textos, criar imagens, ilustrações que podemos por exemplo usar para ilustrar histórias, ou até apresentações. Vamos aprender também a transformar um text em voz, para usarmos de narração para um podcast ou vídeo, por exemplo.
+        </p>
+        <p>
+          Tudo isso sem necessitar ter nenhum conhecimento prévio, começando do zero, até colocarmos a mão na massa e usarmos as inteligências artificiais para criar nossos materiais.
+        </p>
+        <a href="https://www.youtube.com/playlist?list=PLT2AlOaDXYxsLDq5AT9CiqK4qV1k2tIU3" target="_blank" rel="noopener" style="font-weight: bold;">Assistir no YouTube &rarr;</a>
+      </article>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer" id="footer-section">
+      <div class="footer-container">
+        <nav class="footer-nav">
+          <a href="about.html">Sobre</a>
+          <a href="../feed.xml">RSS</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+        <div class="footer-credit-group">
+          <p class="footer-credit">Feito à mão, por um humano.</p>
+          <p class="footer-credit">São Paulo, Brasil.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>E-books — Rodrigo Gossi</title>
+  <meta name="description" content="Conheça e faça o download dos meus e-books sobre tecnologia, automação e desenvolvimento de software.">
+  <meta name="author" content="Rodrigo Gossi">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Evitar FOUC (Flash of Unstyled Content) do Tema Escuro -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="site-header">
+      <div class="header-content-centered">
+        <h1 class="site-title">
+          <a href="index.html" id="logo">Rodrigo Gossi</a>
+        </h1>
+      </div>
+
+      <div class="header-content-centered">
+        <nav class="nav">
+          <ul class="nav-utility">
+            <li><span class="current-lang">PT</span> | <a href="../en/e-books.html">EN</a></li>
+            <li><a href="photos.html" aria-label="Fotos"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></a></li>
+            <li><a href="search.html" aria-label="Pesquisar"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></a></li>
+            <li><button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">carregando...</button></li>
+          </ul>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Sobre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="e-books.html">E-books</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+        <hr style="border-top: 1px solid var(--accent2); opacity: 0.3; margin-top: 0.5em; margin-bottom: 0.1em;">
+      </div>
+    </header>
+
+    <main class="page" id="ebooks-page">
+      <h2 class="p-name" style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold; color: var(--text);">E-books</h2>
+      <p>E-books escritos por mim:</p>
+
+      <article class="project-item" style="margin-top: 2.5em;">
+        <img src="https://rodrigogossi.com/wp-content/uploads/2025/08/capa_ebook_automacao-212x300.png" alt="Capa do E-book Introdução a Testes Automatizados" style="float: left; margin: 0 1.5em 1.5em 0; border-radius: 5px; width: 150px; height: auto;">
+        
+        <h2>Introdução a testes automatizados</h2>
+        <p>
+          Este eBook é um guia introdutório ao universo da automação de testes de software. A partir da história da engenharia de software e dos desafios enfrentados em sistemas críticos como a missão Apollo 11, o leitor compreenderá a importância dos testes na garantia de qualidade. A obra aborda conceitos fundamentais de <em>Testing</em>, níveis e tipos de testes, metodologias como TDD e BDD, além das principais práticas e ferramentas de automação utilizadas no mercado.
+        </p>
+        <p>
+          Clara, objetiva e prática, esta introdução foi pensada para estudantes, desenvolvedores e profissionais de qualidade que desejam construir bases sólidas e aplicar testes automatizados em projetos reais.
+        </p>
+        <div style="clear: both; margin-top: 1.5em;">
+          <a href="https://www.icloud.com/iclouddrive/0e52k4PSpUba9y9bi7MXU7boA#ebook%5Fintroduc%CC%A7a%CC%83o%5Fa%5Fautomac%CC%A7a%CC%83o%5Fde%5Ftestes" target="_blank" rel="noopener" style="font-weight: bold;">Baixar E-book &rarr;</a>
+        </div>
+      </article>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer" id="footer-section">
+      <div class="footer-container">
+        <nav class="footer-nav">
+          <a href="about.html">Sobre</a>
+          <a href="../feed.xml">RSS</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+        <div class="footer-credit-group">
+          <p class="footer-credit">Feito à mão, por um humano.</p>
+          <p class="footer-credit">São Paulo, Brasil.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

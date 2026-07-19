@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Gallery — Rodrigo Gossi</title>
+  <meta name="description" content="An image gallery compiled from Rodrigo Gossi's blog posts, courses, and projects.">
+  <meta name="author" content="Rodrigo Gossi">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Evitar FOUC (Flash of Unstyled Content) do Tema Escuro -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="site-header">
+      <div class="header-content-centered">
+        <h1 class="site-title">
+          <a href="index.html" id="logo">Rodrigo Gossi</a>
+        </h1>
+      </div>
+
+      <div class="header-content-centered">
+        <nav class="nav">
+          <ul class="nav-utility">
+            <li><a href="../pt/photos.html">PT</a> | <span class="current-lang">EN</span></li>
+            <li><a href="photos.html" aria-label="Photos"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></a></li>
+            <li><a href="search.html" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></a></li>
+            <li><button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">loading...</button></li>
+          </ul>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="e-books.html">E-books</a></li>
+            <li><a href="cursos.html">Courses</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+        <hr style="border-top: 1px solid var(--accent2); opacity: 0.3; margin-top: 0.5em; margin-bottom: 0.1em;">
+      </div>
+    </header>
+
+    <main class="page">
+      <h2 class="p-name" style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold; color: var(--text);">Photos</h2>
+      <p>Images and illustrations shared in articles and courses:</p>
+
+      <!-- Photos Grid (Vlad Campos Style) -->
+      <div class="photos-grid">
+        <!-- Curso Ia Generativas -->
+        <a class="photos-grid__item" href="cursos.html" title="Course: Introduction to Generative AIs">
+          <img src="https://rodrigogossi.com/wp-content/uploads/2025/08/curso_ia_generativas-300x169.png" alt="Generative AI Course Cover">
+        </a>
+        
+        <!-- Nextcloud Img 1 -->
+        <a class="photos-grid__item" href="../posts/nextcloud-e-ubuntu-server-como-criei-meu-servidor-em-casa-com-um-notebook-velho.html" title="NextCloud & Ubuntu Server: Image 1.1">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo5ajbZ6u1RwFm0o1J6SCFtNCYa9FaR4u_-xjHxADSoicjLbUgO1q-NKqPmlL4jw28juLPJKEHbZ8VbKiKEkSVhD2G6N9ZkovBcaoYNOrXPQCtVii6C-FJ5EBAOUzqLB31TNtugokSH06xIeALvJqT_kBvsMPizr1XXIpwiQSYWRPFlPciC_SKirzsrRY/w640-h366/1.1.png" alt="Nextcloud Setup 1">
+        </a>
+
+        <!-- Curso Produção de Conteudo -->
+        <a class="photos-grid__item" href="cursos.html" title="Course: Audiovisual Creation in Practice">
+          <img src="https://rodrigogossi.com/wp-content/uploads/2025/08/curso_producao_de_conteudo-300x169.png" alt="Audiovisual Course Cover">
+        </a>
+
+        <!-- Nextcloud Img 2 -->
+        <a class="photos-grid__item" href="../posts/nextcloud-e-ubuntu-server-como-criei-meu-servidor-em-casa-com-um-notebook-velho.html" title="NextCloud & Ubuntu Server: Image 1.2">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJ8ND-qQhbfLzOGnMzmX2Nz03jdl8oFhtzgyfPS5EdyQXjKkydINTp0sMjMpp6GjXbNTbEkOlFvw7rlEsZ_k6rZK7YoxXSrVzcTD7WxAgEIKK1JeSclxFn4kMyU0gyeklCMV-dGvS7S_ztJogo8i_HsaAuxBt8PY8kIFz5ifehq5p3K-ukHCgIAMuW-rE/w640-h366/1.2.png" alt="Nextcloud Setup 2">
+        </a>
+
+        <!-- Capa E-book automacao -->
+        <a class="photos-grid__item" href="e-books.html" title="E-book: Introduction to Automated Testing">
+          <img src="https://rodrigogossi.com/wp-content/uploads/2025/08/capa_ebook_automacao-212x300.png" alt="E-book Cover">
+        </a>
+
+        <!-- Nextcloud Img 3 -->
+        <a class="photos-grid__item" href="../posts/nextcloud-e-ubuntu-server-como-criei-meu-servidor-em-casa-com-um-notebook-velho.html" title="NextCloud & Ubuntu Server: Image 1.3">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiytUArupBW0Mbb7zUwcsUgueARl5CzgJuez37xqGJnKxtuerCWBO8q4QrNmkXoD30NhjAy8y3Axks0D958DwDIuC0tknoCx80Ta2anXyT1Kk3CUY08Ptpq2ia0_YRT9IpXPtMen6sJ6tMu7MDbwVXVnqXN_q6DEz_feV3T2mDPlzlkGdEgqpaz8T_UQ5w/s320/1.3.jpeg" alt="Nextcloud Setup 3">
+        </a>
+
+        <!-- Nextcloud Img 4 -->
+        <a class="photos-grid__item" href="../posts/nextcloud-e-ubuntu-server-como-criei-meu-servidor-em-casa-com-um-notebook-velho.html" title="NextCloud & Ubuntu Server: Image 2.0">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9uVDZAzTQm7GRCQEfGzQfhNsdT46EsQXie6G2Uq0ZYdq3-_UkfVrJ6xmDpl4WIlX9uS8mqeKuorrNc2AkE30za5Wj4cV_mPYFv72DvcuSVbCZE7JMay9PGWRpctN_FYRFQfT403DJgD5_U1-oMLxKHtYnskdijgTwy831gz3tHepyDA_39mmzuyUX9CY/w640-h366/2.0.png" alt="Nextcloud Dashboard">
+        </a>
+
+        <!-- Nextcloud Img 5 -->
+        <a class="photos-grid__item" href="../posts/nextcloud-e-ubuntu-server-como-criei-meu-servidor-em-casa-com-um-notebook-velho.html" title="NextCloud & Ubuntu Server: Image 3.0">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimFFVX4QW6YUbfdiAPHClh63kvOq-lx83cY26e5YNF_BLtGhyphenhyphenl7kyrhHV32YNHf0mgCRsxl5fdILq4L3Fs8Fpkh-UbVNaNWpC4gpgvoW8X43PdjhhYUGs5caUVtWelCH2zEsAxGQRr6-yZCs7L0AdG5INL5Fj4EwRV30uSzToJEAD7UyOwkYPAGWRH3vs/s320/3.0.webp" alt="Nextcloud Mobile Client">
+        </a>
+      </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer" id="footer-section">
+      <div class="footer-container">
+        <nav class="footer-nav">
+          <a href="about.html">About</a>
+          <a href="../feed.xml">RSS</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+        <div class="footer-credit-group">
+          <p class="footer-credit">Handcrafted by a human.</p>
+          <p class="footer-credit">São Paulo, Brazil.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

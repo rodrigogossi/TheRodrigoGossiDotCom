@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Courses — Rodrigo Gossi</title>
+  <meta name="description" content="Discover my free online courses about audiovisual creation and generative artificial intelligence.">
+  <meta name="author" content="Rodrigo Gossi">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Evitar FOUC (Flash of Unstyled Content) do Tema Escuro -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="site-header">
+      <div class="header-content-centered">
+        <h1 class="site-title">
+          <a href="index.html" id="logo">Rodrigo Gossi</a>
+        </h1>
+      </div>
+
+      <div class="header-content-centered">
+        <nav class="nav">
+          <ul class="nav-utility">
+            <li><a href="../pt/cursos.html">PT</a> | <span class="current-lang">EN</span></li>
+            <li><a href="photos.html" aria-label="Photos"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></a></li>
+            <li><a href="search.html" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></a></li>
+            <li><button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">loading...</button></li>
+          </ul>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="e-books.html">E-books</a></li>
+            <li><a href="cursos.html">Courses</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+        <hr style="border-top: 1px solid var(--accent2); opacity: 0.3; margin-top: 0.5em; margin-bottom: 0.1em;">
+      </div>
+    </header>
+
+    <main class="page" id="cursos-page">
+      <h2 class="p-name" style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold; color: var(--text);">Courses</h2>
+      <p>Courses produced by me (videos in Portuguese):</p>
+
+      <!-- Curso 1 -->
+      <article class="project-item" style="margin-top: 2.5em; border-bottom: 1px solid var(--border-color); padding-bottom: 2em; margin-bottom: 2em;">
+        <img src="https://rodrigogossi.com/wp-content/uploads/2025/08/curso_producao_de_conteudo-300x169.png" alt="Course Cover: Audiovisual Creation in Practice" style="border-radius: 5px; width: 100%; max-width: 320px; height: auto; margin-bottom: 1em;">
+        
+        <h2>Criação audiovisual na prática: crie seu primeiro treinamento</h2>
+        <p>
+          During this training we will explore various aspects of the audiovisual world, in order to learn all the steps necessary to produce our own training course!
+        </p>
+        <p>We will cover topics such as:</p>
+        <ul>
+          <li>Creative writing;</li>
+          <li>Scriptwriting and Structuring;</li>
+          <li>Audio editing;</li>
+          <li>Color correction;</li>
+          <li>Video editing principles;</li>
+        </ul>
+        <p>Ready to start your journey in the incredible world of audiovisuals?</p>
+        <a href="https://www.youtube.com/playlist?list=PLT2AlOaDXYxvO5FCJ_ewJzn4VGXVHgnDe" target="_blank" rel="noopener" style="font-weight: bold;">Watch on YouTube (PT) &rarr;</a>
+      </article>
+
+      <!-- Curso 2 -->
+      <article class="project-item">
+        <img src="https://rodrigogossi.com/wp-content/uploads/2025/08/curso_ia_generativas-300x169.png" alt="Course Cover: Introduction to Generative AIs" style="border-radius: 5px; width: 100%; max-width: 320px; height: auto; margin-bottom: 1em;">
+        
+        <h2>Introdução a IA's generativas</h2>
+        <p>
+          During this course we will learn to use the most popular AI tools existing today. We will learn to use them to create and format text, generate images, and make illustrations that we can use, for example, to illustrate stories or presentations. We will also learn how to transform text into voice, to use as narration for a podcast or video.
+        </p>
+        <p>
+          All of this without needing any prior knowledge, starting from scratch until we get our hands dirty and use artificial intelligences to create our materials.
+        </p>
+        <a href="https://www.youtube.com/playlist?list=PLT2AlOaDXYxsLDq5AT9CiqK4qV1k2tIU3" target="_blank" rel="noopener" style="font-weight: bold;">Watch on YouTube (PT) &rarr;</a>
+      </article>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer" id="footer-section">
+      <div class="footer-container">
+        <nav class="footer-nav">
+          <a href="about.html">About</a>
+          <a href="../feed.xml">RSS</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+        <div class="footer-credit-group">
+          <p class="footer-credit">Handcrafted by a human.</p>
+          <p class="footer-credit">São Paulo, Brazil.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

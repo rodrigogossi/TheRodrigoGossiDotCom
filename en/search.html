@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Search — Rodrigo Gossi</title>
+  <meta name="description" content="Search for articles and thoughts written by Rodrigo Gossi.">
+  <meta name="author" content="Rodrigo Gossi">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Evitar FOUC (Flash of Unstyled Content) do Tema Escuro -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="site-header">
+      <div class="header-content-centered">
+        <h1 class="site-title">
+          <a href="index.html" id="logo">Rodrigo Gossi</a>
+        </h1>
+      </div>
+
+      <div class="header-content-centered">
+        <nav class="nav">
+          <ul class="nav-utility">
+            <li><a href="../pt/search.html">PT</a> | <span class="current-lang">EN</span></li>
+            <li><a href="photos.html" aria-label="Photos"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></a></li>
+            <li><a href="search.html" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></a></li>
+            <li><button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">loading...</button></li>
+          </ul>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="e-books.html">E-books</a></li>
+            <li><a href="cursos.html">Courses</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+        <hr style="border-top: 1px solid var(--accent2); opacity: 0.3; margin-top: 0.5em; margin-bottom: 0.1em;">
+      </div>
+    </header>
+
+    <main class="page">
+      <h2 class="p-name" style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold; color: var(--text);">Search</h2>
+      
+      <input type="text" id="search-input" placeholder="Search articles..." style="width: 100%; padding: 0.7em 1em; border-radius: 6px; border: 1px solid var(--accent2); background: var(--background); color: var(--text); font-size: 1rem; margin-bottom: 2em; outline: none; transition: border-color 0.2s;" autofocus>
+
+      <div id="search-results">
+        <p style="color: var(--accent2);">Type terms to start searching.</p>
+      </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer" id="footer-section">
+      <div class="footer-container">
+        <nav class="footer-nav">
+          <a href="about.html">About</a>
+          <a href="../feed.xml">RSS</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+        <div class="footer-credit-group">
+          <p class="footer-credit">Handcrafted by a human.</p>
+          <p class="footer-credit">São Paulo, Brazil.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Search Logic -->
+  <script>
+    const posts = [
+      {
+        title: "Conhecimento, a arte de reconstruir pontes.",
+        url: "../posts/conhecimento-a-arte-de-reconstruir-pontes.html",
+        date: "Apr 12, 2026",
+        excerpt: "For me, the only thing we should - fundamentally - learn on our journey through life is not to be victims of our own existence. Jesus spoke of being heirs to the kingdom of heaven..."
+      },
+      {
+        title: "Vida, Amor e Solidão - Osho",
+        url: "../posts/vida-amor-e-solidao-osho.html",
+        date: "Feb 11, 2026",
+        excerpt: "In this book, the author - Osho - a great Indian philosopher discusses his views on love, its meaning, and how it applies to everyday life. The core of his approach in all his teachings..."
+      },
+      {
+        title: "Metamorfose: uma reflexão sobre a utilidade da vida",
+        url: "../posts/metamorfose-uma-reflexao-sobre-a-utilidade-da-vida.html",
+        date: "Aug 20, 2025",
+        excerpt: "Recently, I read Metamorphosis by Franz Kafka (published in 1915), in which we follow the story of Gregor Samsa, a young adult starting his life. He works as a traveling salesman..."
+      },
+      {
+        title: "O que é mindfullness e como pode te ajudar a ter uma vida mais tranquila e com mais propósito",
+        url: "../posts/o-que-e-mindfullness-e-como-pode-te-ajudar-a-ter-uma-vida-mais-tranquila-e-com-mais-proposito.html",
+        date: "Jan 22, 2024",
+        excerpt: "We live in a fast-paced society, majorly focused on results and seeking collective acceptance. We seek to tirelessly increase our productivity in order to produce and consume more..."
+      },
+      {
+        title: "Como ter 2 bancadas de trabalho aumentou minha criatividade",
+        url: "../posts/como-ter-2-bancadas-de-trabalho-aumentou-minha-criatividade.html",
+        date: "Jan 19, 2024",
+        excerpt: "\"In our digital era, don't forget to use your digits\" - Lynda Barry. We live in a shift of a decade, as pointed out by Domenico de Masi in \"Creative Idleness\" (2001)..."
+      },
+      {
+        title: "Redação ODS",
+        url: "../posts/redacao-ods.html",
+        date: "Nov 22, 2022",
+        excerpt: "Equal opportunity is a principle according to which all people should be treated equally in their differences and should have access to a quality education..."
+      },
+      {
+        title: "NextCloud e Ubuntu Server: Como criei meu servidor em casa com um notebook velho!",
+        url: "../posts/nextcloud-e-ubuntu-server-como-criei-meu-servidor-em-casa-com-um-notebook-velho.html",
+        date: "Sep 08, 2022",
+        excerpt: "Years go by, and with them, we improve the technologies that are part of our daily lives. Probably, at some point, you needed a new computer or laptop..."
+      },
+      {
+        title: "As músicas do Minecraft são tão…",
+        url: "../posts/as-musicas-do-minecraft-sao-tao.html",
+        date: "Jun 07, 2022",
+        excerpt: "These days, while exploring Spotify, I came almost by chance across a playlist of Minecraft soundtracks. I don't know why, but I found it so unexpected that I hit play..."
+      }
+    ];
+
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      
+      if (query.length === 0) {
+        searchResults.innerHTML = '<p style="color: var(--accent2);">Type terms to start searching.</p>';
+        return;
+      }
+
+      const filtered = posts.filter(post => 
+        post.title.toLowerCase().includes(query) || 
+        post.excerpt.toLowerCase().includes(query)
+      );
+
+      if (filtered.length === 0) {
+        searchResults.innerHTML = '<p style="color: var(--accent2);">No articles found matching this query.</p>';
+        return;
+      }
+
+      let html = '';
+      filtered.forEach(post => {
+        html += `
+          <div class="post-item" style="margin-bottom: 1.8em;">
+            <a href="${post.url}" class="post-link" style="font-size: 1.15rem; font-weight: bold; text-decoration: underline; color: var(--text);">${post.title}</a>
+            <span class="post-date" style="font-size: 0.8em; color: var(--accent2); margin-left: 0.75rem;">${post.date}</span>
+            <p style="font-size: 0.95rem; line-height: 1.5; margin-top: 0.4em; color: var(--accent2);">${post.excerpt}</p>
+          </div>
+        `;
+      });
+      searchResults.innerHTML = html;
+    });
+  </script>
+
+  <!-- Scripts -->
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

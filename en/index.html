@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Rodrigo Gossi — Developer and Writer</title>
+  <meta name="description" content="My personal space on the internet. Courses, e-books, videos, and articles about software engineering, privacy, and minimalist design.">
+  <meta name="author" content="Rodrigo Gossi">
+  
+  <!-- RSS Feed link -->
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed of Rodrigo Gossi" href="../feed.xml">
+
+  <!-- Estilos e Fontes (parent directory) -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Evitar FOUC (Flash of Unstyled Content) do Tema Escuro -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="site-header">
+      <div class="header-content-centered">
+        <h1 class="site-title">
+          <a href="index.html" id="logo">Rodrigo Gossi</a>
+        </h1>
+      </div>
+
+      <div class="header-content-centered">
+        <nav class="nav">
+          <ul class="nav-utility">
+            <li><a href="../pt/index.html">PT</a> | <span class="current-lang">EN</span></li>
+            <li><a href="photos.html" aria-label="Photos"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></a></li>
+            <li><a href="search.html" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></a></li>
+            <li><button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">loading...</button></li>
+          </ul>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="e-books.html">E-books</a></li>
+            <li><a href="cursos.html">Courses</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+        <hr style="border-top: 1px solid var(--accent2); opacity: 0.3; margin-top: 0.5em; margin-bottom: 0.1em;">
+      </div>
+    </header>
+
+    <main class="page">
+      <!-- Título de Página Clássico da Referência -->
+      <h2 class="p-name" style="margin-top: 0; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold; color: var(--text);">Home</h2>
+
+      <!-- Seção Inicial (Apresentação com Foto Flutuante à Direita) -->
+      <section class="hero" id="hero-section" style="margin-bottom: 3rem;">
+        <img src="https://rodrigogossi.com/wp-content/uploads/2025/08/profile-1024x1024.png" alt="Photo of Rodrigo Gossi" style="float: right; margin: 0 0 1.2em 1.5em; border-radius: 8px; width: 140px; height: auto; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        
+        <p>
+          On this site you will find courses, e-books, videos, and links to complementary social channels.
+        </p>
+        <p>
+          I sincerely hope this content helps you live a more practical and meaningful life.
+        </p>
+
+        <!-- Redes Sociais -->
+        <div style="clear: both; padding-top: 1em;">
+          <nav class="nav" style="margin-bottom: 0;">
+            <ul style="justify-content: flex-start; gap: 0.5em 1.2em; font-size: 0.95rem;">
+              <li><a href="https://www.linkedin.com/in/rodrigogossi/" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://github.com/rodrigogossi" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://open.spotify.com/show/0IqkHvCl5Y9BSJwfBzDHSF?si=3b6e031f0bd7406e" target="_blank" rel="noopener">Spotify</a></li>
+              <li><a href="https://youtube.com/@rodrigo.gossi" target="_blank" rel="noopener">YouTube</a></li>
+              <li><a href="mailto:contato@rodrigogossi.com">E-mail</a></li>
+              <li><a href="https://instagram.com/rodrigo.gossi" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer" id="footer-section">
+      <div class="footer-container">
+        <nav class="footer-nav">
+          <a href="about.html">About</a>
+          <a href="../feed.xml">RSS</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+        <div class="footer-credit-group">
+          <p class="footer-credit">Handcrafted by a human.</p>
+          <p class="footer-credit">São Paulo, Brazil.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

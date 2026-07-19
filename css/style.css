@@ -1,0 +1,542 @@
+/* ==========================================================================
+   KILL THE INTERNET 2.0 - VLAD CAMPOS STYLE (TINY THEME EMULATION)
+   Centered headers, flex navigation menus, full-width footer backgrounds.
+   ========================================================================== */
+
+:root {
+  /* LIGHT MODE (vladcampos.com palette) */
+  --background: #ffffff;
+  --text: #444444;
+  --link: #283837; /* Dark slate green/teal */
+  --link-visited: #283837;
+  --accent1: #333333;
+  --accent2: #666666;
+  
+  --footer-bg: #f5f5f5;
+  --blockquote-line: #283837;
+  --code-bg: #f5f5f5;
+  --code-text: #283837;
+
+  /* Fonts */
+  --font-sans: system-ui, sans-serif;
+  --font-serif: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+}
+
+[data-theme="dark"] {
+  /* DARK MODE (Apple Style - Monochromatic & Neutral) */
+  --background: #000000;
+  --text: #f5f5f7;
+  --link: #ffffff;
+  --link-visited: #ffffff;
+  --accent1: #ffffff;
+  --accent2: #86868b;
+  
+  --footer-bg: #1c1c1e;
+  --blockquote-line: #86868b;
+  --code-bg: #1c1c1e;
+  --code-text: #ffffff;
+}
+
+/* ==========================================================================
+   RESET & LAYOUT
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 40em; /* ~680px for optimal readability */
+  margin: 2em auto;
+  padding: 0 1em;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Container limits wrapper content but allows footer trick */
+.container {
+  width: 100%;
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION (Centered)
+   ========================================================================== */
+.site-header {
+  margin-bottom: 2em;
+}
+
+.header-content-centered {
+  text-align: center;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+.site-title a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.site-title a:hover {
+  color: var(--accent1);
+}
+
+.nav {
+  margin-bottom: 1em;
+}
+
+/* Navigation lists */
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4em 0.8em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.nav-utility {
+  margin-bottom: 5px;
+  gap: 0.4em 0.8em;
+}
+
+.nav ul li {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.4em;
+}
+
+nav a,
+nav a:visited {
+  text-decoration: none;
+  opacity: 0.7;
+  color: var(--link);
+  font-size: 0.9em;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: var(--link);
+  background: none;
+}
+
+/* Theme toggle as icon link in menu */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--link);
+  opacity: 0.7;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.theme-toggle-btn:hover {
+  opacity: 1;
+}
+
+.current-lang {
+  opacity: 1;
+  color: var(--link);
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* Subtle separator line */
+hr {
+  border: none;
+  border-top: 1px solid var(--accent2);
+  opacity: 0.3;
+  margin: 2em 0;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+h1, h2, h3 {
+  color: var(--text);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0.8em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin-top: 1.5em;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.2em;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  transition: opacity 0.2s;
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   COMPONENTS (Flat Lists & Blockquotes)
+   ========================================================================== */
+
+/* Page post/project wrapper */
+.page {
+  margin-bottom: 3em;
+}
+
+/* Projects Text list */
+.project-item {
+  margin-bottom: 1.5rem;
+}
+
+.project-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.project-link-ref {
+  font-size: 0.85rem;
+}
+
+/* Articles list */
+.post-item {
+  margin-bottom: 1rem;
+}
+
+.post-link {
+  font-weight: bold;
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.post-link:hover {
+  color: var(--link);
+}
+
+.post-date {
+  font-size: 0.8em;
+  color: var(--accent2);
+  margin-left: 0.75rem;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   BLOG POST CONTENT LAYOUT
+   ========================================================================== */
+.post-meta {
+  color: var(--accent2);
+  font-size: 0.8em;
+  margin-bottom: 1.5em;
+}
+
+article.post-content {
+  margin-bottom: 2em;
+  overflow-wrap: anywhere;
+}
+
+article.post-content p:first-of-type {
+  margin-top: 0;
+}
+
+/* Flat Blockquotes */
+blockquote {
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-left: 3px solid var(--blockquote-line) !important;
+  margin: 1.5rem 0;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  font-style: normal !important;
+  color: inherit;
+}
+
+blockquote p:first-child {
+  margin-top: 0;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Monospace Code blocks */
+code {
+  background: var(--code-bg);
+  padding: 2px 4px;
+  font-size: 0.9em;
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  color: var(--code-text);
+}
+
+pre {
+  background: var(--code-bg);
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Images */
+article.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: 1.5em auto;
+  display: block;
+}
+
+/* Back navigation */
+.post-footer {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+  text-align: center;
+}
+
+.back-link {
+  font-size: 0.9em;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   FOOTER (Full width background trick)
+   ========================================================================== */
+footer, .site-footer {
+  background-color: var(--footer-bg) !important;
+  margin-bottom: 0 !important;
+  margin-top: 5rem;
+  position: relative;
+  /* Box-shadow expansion hack to fill screen edges */
+  box-shadow: 0 0 0 100vmax var(--footer-bg) !important;
+  clip-path: inset(0 -100vmax -100vmax) !important;
+  padding: 2.5rem 0 4rem 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-credit-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-nav a,
+.footer-credit a,
+.footer-credit {
+  text-decoration: none;
+  color: var(--text) !important;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  transition: opacity 0.2s;
+}
+
+.footer-nav a:hover,
+.footer-credit a:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+/* Responsive Bio Layout */
+.bio-container {
+  display: flex;
+  align-items: center;
+  gap: 2.5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.bio-image {
+  flex-shrink: 0;
+}
+
+.bio-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.bio-text {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.bio-text p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin: 0 0 0.8em 0;
+  color: var(--text);
+}
+
+.bio-text p:last-of-type {
+  margin-bottom: 1.2em;
+}
+
+.bio-social ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.2em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .bio-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.8em;
+  }
+  .bio-text {
+    text-align: center;
+  }
+  .bio-social ul {
+    justify-content: center;
+  }
+}
+
+/* Align utility links (SVGs) vertically */
+.nav-utility a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+/* Photos Grid Gallery (Vlad Campos Emulation) */
+.photos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.photos-grid__item {
+  display: block;
+  position: relative;
+  flex: auto;
+}
+
+.photos-grid__item:last-child {
+  flex-grow: 10;
+}
+
+.photos-grid__item img {
+  height: 30vh;
+  width: auto;
+  min-width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: opacity 0.2s, transform 0.2s ease-in-out;
+  border: 1px solid var(--accent2);
+}
+
+.photos-grid__item img:hover {
+  opacity: 0.85;
+  transform: scale(1.01);
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .photos-grid__item img {
+    height: 25vh;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .photos-grid {
+    flex-direction: column;
+  }
+  
+  .photos-grid__item {
+    width: 100%;
+  }
+  
+  .photos-grid__item img {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    min-width: 0;
+  }
+}

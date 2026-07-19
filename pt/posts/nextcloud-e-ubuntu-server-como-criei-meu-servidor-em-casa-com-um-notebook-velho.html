@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>NextCloud e Ubuntu Server: Como criei meu servidor em casa com um notebook velho! — Rodrigo Gossi</title>
+  <meta name="description" content="Os anos se passam, e com eles, aprimoramos as tecnologias que fazem parte do nosso cotidiano. Provavelmente, em algum momento, você precisou de um novo computador ou notebook e, por isso, adquiriu um ...">
+  <meta name="author" content="Rodrigo Gossi">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Evitar FOUC (Flash of Unstyled Content) do Tema Escuro -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="site-header">
+      <div class="header-content-centered">
+        <h1 class="site-title">
+          <a href="../../pt/index.html" id="logo">Rodrigo Gossi</a>
+        </h1>
+      </div>
+
+      <div class="header-content-centered">
+        <nav class="nav">
+          <ul class="nav-utility">
+            <li><span class="current-lang">PT</span> | <a href="../../en/blog.html">EN</a></li>
+            <li><a href="../../pt/photos.html" aria-label="Fotos"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></a></li>
+            <li><a href="../../pt/search.html" aria-label="Pesquisar"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></a></li>
+            <li><button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">carregando...</button></li>
+          </ul>
+          <ul>
+            <li><a href="../../pt/index.html">Home</a></li>
+            <li><a href="../../pt/about.html">Sobre</a></li>
+            <li><a href="../../pt/blog.html">Blog</a></li>
+            <li><a href="../../pt/e-books.html">E-books</a></li>
+            <li><a href="../../pt/cursos.html">Cursos</a></li>
+            <li><a href="../../feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+        <hr style="border-top: 1px solid var(--accent2); opacity: 0.3; margin-top: 0.5em; margin-bottom: 0.1em;">
+      </div>
+    </header>
+
+    <main class="page">
+      <article>
+        <!-- Cabeçalho do Artigo -->
+        <div class="post-header">
+          <h2 class="p-name" style="margin-top: 0; margin-bottom: 0.5rem; font-size: 1.5rem; font-weight: bold; color: var(--text);">NextCloud e Ubuntu Server: Como criei meu servidor em casa com um notebook velho!</h2>
+          <div class="post-meta">
+            <span>Publicado em: <time datetime="2022-09-08">8 de Setembro, 2022</time></span>
+            <span id="reading-time">Calculando...</span>
+          </div>
+        </div>
+
+        <!-- Conteúdo do Artigo -->
+        <div class="post-content">
+          <!-- wp:paragraph -->
+<p>Os anos se passam, e com eles, aprimoramos as tecnologias que fazem parte do nosso cotidiano. Provavelmente, em algum momento, você precisou de um novo computador ou notebook e, por isso, adquiriu um novo dispositivo. Não há nada de errado nisso, afinal, é maravilhoso ter um equipamento que atenda às nossas necessidades e seja confiável.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Mas, por outro lado, o antigo equipamento, agora menos potente, muitas vezes é deixado de lado em uma gaveta ou coberto de poeira. Aqui está uma oportunidade incrível de remover a poeira e dar uma nova vida a esse hardware. Afinal, nada é tão ruim que não possa ser reutilizado, não é mesmo?&nbsp;😉</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p><strong>👀&nbsp;Enquanto escrevo isso, lembro de uma curiosidade interessante:</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Sabia que o computador que levou o homem à lua em 1969 tinha menos poder de processamento do que um laptop de brinquedo que temos hoje? Pois é! Imagine o que podemos fazer com um "computador velho" dos dias de hoje.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Para saber mais: O computador tinha o nome de Apollo Guidance Computer (AGC), com pouco mais de 4 MB de memória RAM para leitura de dados, além de 72 KB de memória ROM.</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>(Referência: Dados de&nbsp;<a href="https://www.fullture.com/o-seu-smartphone-provavelmente-e-mais-potente-do-que-o-computador-de-bordo-da-apollo-11-a-espaconave-que-levou-o-homem-a-lua/" rel="noreferrer noopener" target="_blank">fullture.com</a>&nbsp;- Acessado em 09/2022)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Bem, se quiser saber, o computador que usei para este projeto é um antigo da marca Semp Toshiba, com 4 GB de RAM e um processador Celeron. Quando foi comprado em 2016, servia para as atividades do dia a dia, rs.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>No entanto, recentemente, todos em casa adquiriram Chromebooks, laptops super leves, pequenos, baratos e projetados para uso com serviços web. Esse "trambolho", que era útil, agora ficou obsoleto.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Foi aí que descobri o NextCloud, um projeto de código aberto que permite criar facilmente um servidor próprio para seus arquivos ou para o seu trabalho em geral. O ponto positivo é que você mantém o controle de suas informações, afastado da "vigilância digital" que temos atualmente (cof cof... teorias da conspiração).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong><em><u>Mãos à obra!</u></em></strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>O primeiro passo é instalar o sistema operacional Ubuntu Server na máquina.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"linkDestination":"custom"} -->
+<figure class="wp-block-image"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo5ajbZ6u1RwFm0o1J6SCFtNCYa9FaR4u_-xjHxADSoicjLbUgO1q-NKqPmlL4jw28juLPJKEHbZ8VbKiKEkSVhD2G6N9ZkovBcaoYNOrXPQCtVii6C-FJ5EBAOUzqLB31TNtugokSH06xIeALvJqT_kBvsMPizr1XXIpwiQSYWRPFlPciC_SKirzsrRY/s2688/1.1.png"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo5ajbZ6u1RwFm0o1J6SCFtNCYa9FaR4u_-xjHxADSoicjLbUgO1q-NKqPmlL4jw28juLPJKEHbZ8VbKiKEkSVhD2G6N9ZkovBcaoYNOrXPQCtVii6C-FJ5EBAOUzqLB31TNtugokSH06xIeALvJqT_kBvsMPizr1XXIpwiQSYWRPFlPciC_SKirzsrRY/w640-h366/1.1.png" alt=""/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Embora possa parecer assustador à primeira vista, a instalação é bastante simples. O Ubuntu Server, na versão específica para servidores, não possui uma interface gráfica por padrão. Todos os comandos serão feitos por linha de comando. Se quiser saber mais detalhes sobre a instalação, recomendo o tutorial do canal DioLinux&nbsp;<a href="https://www.youtube.com/watch?v=3XkHSi0qCkc&amp;ab_channel=Diolinux" rel="noreferrer noopener" target="_blank">clicando aqui</a>&nbsp;- Crédito: Diolinux.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Basicamente, você precisará baixar a ISO do sistema e criar um pendrive bootável. Você pode baixá-lo no&nbsp;<a href="https://ubuntu.com/download/server" rel="noreferrer noopener" target="_blank">site oficial.</a>&nbsp;Para criar o pendrive bootável, existem diversas ferramentas, dependendo do sistema operacional que você está usando.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"linkDestination":"custom"} -->
+<figure class="wp-block-image"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJ8ND-qQhbfLzOGnMzmX2Nz03jdl8oFhtzgyfPS5EdyQXjKkydINTp0sMjMpp6GjXbNTbEkOlFvw7rlEsZ_k6rZK7YoxXSrVzcTD7WxAgEIKK1JeSclxFn4kMyU0gyeklCMV-dGvS7S_ztJogo8i_HsaAuxBt8PY8kIFz5ifehq5p3K-ukHCgIAMuW-rE/s2688/1.2.png"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJ8ND-qQhbfLzOGnMzmX2Nz03jdl8oFhtzgyfPS5EdyQXjKkydINTp0sMjMpp6GjXbNTbEkOlFvw7rlEsZ_k6rZK7YoxXSrVzcTD7WxAgEIKK1JeSclxFn4kMyU0gyeklCMV-dGvS7S_ztJogo8i_HsaAuxBt8PY8kIFz5ifehq5p3K-ukHCgIAMuW-rE/w640-h366/1.2.png" alt=""/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Feito isso, basta instalar. Não vou aprofundar nos mínimos detalhes aqui, pois isso pode variar com a versão. Será mais interessante se você mesmo tentar, pesquisar e aprender com os erros. Acredite, é mais simples do que parece, mesmo sendo totalmente por linha de comando. Será necessário definir um nome de usuário, senha, local de instalação, entre outras coisas.&nbsp;<em><strong><u>Por fim, marque a opção para instalar o NextCloud automaticamente.</u></strong></em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"linkDestination":"custom"} -->
+<figure class="wp-block-image"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiytUArupBW0Mbb7zUwcsUgueARl5CzgJuez37xqGJnKxtuerCWBO8q4QrNmkXoD30NhjAy8y3Axks0D958DwDIuC0tknoCx80Ta2anXyT1Kk3CUY08Ptpq2ia0_YRT9IpXPtMen6sJ6tMu7MDbwVXVnqXN_q6DEz_feV3T2mDPlzlkGdEgqpaz8T_UQ5w/s713/1.3.jpeg"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiytUArupBW0Mbb7zUwcsUgueARl5CzgJuez37xqGJnKxtuerCWBO8q4QrNmkXoD30NhjAy8y3Axks0D958DwDIuC0tknoCx80Ta2anXyT1Kk3CUY08Ptpq2ia0_YRT9IpXPtMen6sJ6tMu7MDbwVXVnqXN_q6DEz_feV3T2mDPlzlkGdEgqpaz8T_UQ5w/s320/1.3.jpeg" alt=""/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>(Uma tela semelhante a esta será exibida, onde você pode selecionar o NextCloud para ser instalado automaticamente, créditos da captura https://www.centlinux.com/2021/03/ubuntu-server-installation-guide-screenshots.html)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Observação: Se estiver usando um laptop, pode ser útil desabilitar a função de "hibernar" quando a tampa do laptop é fechada, evitando que o servidor desligue ao guardar o laptop. Para isso, siga [este tutorial](https://ubuntuforums.org/showthread.php?t=2354378).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Pronto, a instalação é só isso!</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"linkDestination":"custom"} -->
+<figure class="wp-block-image"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9uVDZAzTQm7GRCQEfGzQfhNsdT46EsQXie6G2Uq0ZYdq3-_UkfVrJ6xmDpl4WIlX9uS8mqeKuorrNc2AkE30za5Wj4cV_mPYFv72DvcuSVbCZE7JMay9PGWRpctN_FYRFQfT403DJgD5_U1-oMLxKHtYnskdijgTwy831gz3tHepyDA_39mmzuyUX9CY/s2688/2.0.png"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9uVDZAzTQm7GRCQEfGzQfhNsdT46EsQXie6G2Uq0ZYdq3-_UkfVrJ6xmDpl4WIlX9uS8mqeKuorrNc2AkE30za5Wj4cV_mPYFv72DvcuSVbCZE7JMay9PGWRpctN_FYRFQfT403DJgD5_U1-oMLxKHtYnskdijgTwy831gz3tHepyDA_39mmzuyUX9CY/w640-h366/2.0.png" alt=""/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Agora, o seu servidor NextCloud foi instalado corretamente (espero que tenha dado certo aí&nbsp;😄; caso contrário, não hesite em formatar a máquina e tentar quantas vezes forem necessárias). Como próximo passo, basta acessar o IP local da máquina onde o NextCloud foi instalado, a partir de outra máquina na mesma rede.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Se tudo funcionou, você verá a tela inicial do serviço.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"linkDestination":"custom"} -->
+<figure class="wp-block-image"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimFFVX4QW6YUbfdiAPHClh63kvOq-lx83cY26e5YNF_BLtGhyphenhyphenl7kyrhHV32YNHf0mgCRsxl5fdILq4L3Fs8Fpkh-UbVNaNWpC4gpgvoW8X43PdjhhYUGs5caUVtWelCH2zEsAxGQRr6-yZCs7L0AdG5INL5Fj4EwRV30uSzToJEAD7UyOwkYPAGWRH3vs/s701/3.0.webp"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimFFVX4QW6YUbfdiAPHClh63kvOq-lx83cY26e5YNF_BLtGhyphenhyphenl7kyrhHV32YNHf0mgCRsxl5fdILq4L3Fs8Fpkh-UbVNaNWpC4gpgvoW8X43PdjhhYUGs5caUVtWelCH2zEsAxGQRr6-yZCs7L0AdG5INL5Fj4EwRV30uSzToJEAD7UyOwkYPAGWRH3vs/s320/3.0.webp" alt=""/></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>(Créditos: [LinuxTechi](https://www.linuxtechi.com/install-configure-nextcloud-on-centos-7-rhel-7/))</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Aqui, basta configurar com seu usuário, criar uma senha e começar a explorar o serviço.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Eu particularmente adorei todo o processo. Realmente aprendi e me diverti realizando e usando o NextCloud. Espero que seja uma experiência legal para você também.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Com carinho,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Rodrigo&nbsp;💙</p>
+<!-- /wp:paragraph -->
+        </div>
+      </article>
+
+      <!-- Rodapé do Artigo (Link de Voltar) -->
+      <div class="post-footer">
+        <a href="../../pt/index.html" class="back-link" id="back-home">Voltar para a página inicial</a>
+      </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer" id="footer-section">
+      <div class="footer-container">
+        <nav class="footer-nav">
+          <a href="../../pt/about.html">Sobre</a>
+          <a href="../../feed.xml">RSS</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+        <div class="footer-credit-group">
+          <p class="footer-credit">Feito à mão, por um humano.</p>
+          <p class="footer-credit">São Paulo, Brasil.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../../js/main.js" defer></script>
+</body>
+</html>
